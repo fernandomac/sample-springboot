@@ -8,15 +8,14 @@ server:
 resteasy:
   jaxrs.app.registration: beans
 
-spring:
-  jersey:
-    application-path: /jersey
+#spring:
+#  jersey:
+#    application-path: /jersey
 
 management:
   endpoints:
     enabled-by-default: true
     web.exposure.include: health, metrics, info
-    web.base-path: /actuator
   endpoint:
     health:
       enabled: true
@@ -25,4 +24,10 @@ management:
       enabled: true
       show-details: always
     metrics:
-      enable: true
+      enabled: true
+  metrics:
+    web:
+      server:
+        request:
+          autotime:
+            enabled: true
