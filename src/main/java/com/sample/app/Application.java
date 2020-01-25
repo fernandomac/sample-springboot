@@ -12,7 +12,9 @@ import org.springframework.context.annotation.Import;
 @Import({
     JerseyConfig.class
 })
-@ComponentScan("com.sample.resource")
+@ComponentScan( {
+	"com.sample.resource", 
+	"com.sample.service" })
 public class Application implements CommandLineRunner {
 
     Logger logger = LoggerFactory.getLogger(Application.class);
